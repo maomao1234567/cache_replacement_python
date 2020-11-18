@@ -103,3 +103,5 @@ def test_remove_node():
     assert double_linked_list.size == 2
     assert double_linked_list.tail == node3
 
+    double_linked_list.print()
+

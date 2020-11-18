@@ -103,3 +103,15 @@ class DoubleLinkedList:
             self.size -= 1
 
             return node
+
+    def print(self):
+        head = self.head
+
+        s = ''
+        while head:
+            s += f'{str(head)}'
+            head = head.next
+            if head:
+                s += ' => '
+
+        print(s)
