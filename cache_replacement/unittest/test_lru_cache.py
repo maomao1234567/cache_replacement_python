@@ -32,3 +32,6 @@ def test_put_cache():
     assert lru_cache.size == 3
     assert lru_cache.get(4) == 4
     assert lru_cache.get(1) == -1
+
+    assert lru_cache.get(3) == 3
+

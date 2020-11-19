@@ -13,19 +13,20 @@ class LRUCache:
         if key not in self.cache_map:
             return -1
         else:
-            value = self.cache_map.get(key)
-            node = Node(key, value)
+            node = self.cache_map.get(key)
+
             self.cache_list.remove(node)
             self.cache_list.append_front(node)
-            return value
+            return node.value
 
     def put(self, key, value):
         if key in self.cache_map:
-            old_node = Node(key, self.cache_map.get(key))
+            old_node = self.cache_map.get(key)
             self.cache_list.remove(old_node)
+
             new_node = Node(key, value)
             self.cache_list.append(new_node)
-            self.cache_map[key] = value
+            self.cache_map[key] = new_node
         else:
 
             if self.size == self.capacity:
@@ -36,4 +37,4 @@ class LRUCache:
 
             new_node = Node(key, value)
             self.cache_list.append_front(new_node)
-            self.cache_map[key] = value
+            self.cache_map[key] = new_node
