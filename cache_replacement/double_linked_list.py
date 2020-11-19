@@ -87,7 +87,7 @@ class DoubleLinkedList:
         return self.__del_head()
 
     # 删除任意节点
-    def remove(self, node):
+    def remove(self, node=None):
         if node is None:
             node = self.tail
 
